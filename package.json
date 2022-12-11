@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "@remotion/cli": "3.3.9",
+    "@types/styled-components": "^5.1.26",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "remotion": "3.3.9"
+    "remotion": "3.3.9",
+    "styled-components": "^5.3.6"
   },
   "packageManager": "npm@8.19.1"
 }
