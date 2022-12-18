@@ -4,49 +4,56 @@ import {
 	interpolate,
 	useCurrentFrame,
 	useVideoConfig,
+	Sequence,
 } from 'remotion';
 import machine from './img/eudaimonia-machine.png';
 import styled from 'styled-components';
+import {Animation} from 'remotion-animation';
 
 export const Scene6Building: React.FC = () => {
-	const {width, height} = useVideoConfig();
+	const {width, height, fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 
 	const slowSpin = interpolate(frame, [0, 180], [0, 360]);
 	const fastSpin = interpolate(frame, [0, 90], [0, 360]);
 	const reverseSpin = interpolate(frame, [0, 45], [0, -360]);
 
-	const machineSlide = interpolate(frame, [60, 80], [0, -100], {
+	const machineSlide = interpolate(frame, [90, 110], [0, -100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.back(),
 	});
 
-	const buildingSlide = interpolate(frame, [70, 90], [0, -100], {
+	const buildingSlide = interpolate(frame, [100, 120], [0, -100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.elastic(),
 	});
 
-	const secondBuildingSlide = interpolate(frame, [140, 160], [0, -150], {
+	const secondBuildingSlide = interpolate(frame, [190, 210], [0, -150], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.back(),
 	});
 
-	const diagramSlide = interpolate(frame, [150, 170], [0, -100], {
+	const diagramSlide = interpolate(frame, [220, 240], [0, -100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.elastic(),
 	});
 
-	const secondDiagramSlide = interpolate(frame, [190, 220], [0, 100], {
+	const secondDiagramSlide = interpolate(frame, [450, 480], [0, 100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.back(),
 	});
 
-	const birdOpacity = interpolate(frame, [70, 71, 140, 160], [0, 1, 1, 0]);
+	const birdOpacity = interpolate(frame, [70, 71, 190, 210], [0, 1, 1, 0]);
+
+	const normalizedBirdStep = (offset: number = 0) => {
+		const birdStep = Math.floor((frame + offset) / (fps / 10));
+		return (birdStep - Math.floor(frame / fps) * 10) * 90;
+	};
 
 	const Title = styled.div`
 		font-family: var(--block);
@@ -84,24 +91,96 @@ export const Scene6Building: React.FC = () => {
 						transform: `translateX(${buildingSlide}%)`,
 					}}
 				>
-					<div style={{opacity: birdOpacity}}>
-						<div className="bird-container bird-container--one">
-							<div className="bird bird--one"></div>
-						</div>
-
-						<div className="bird-container bird-container--two">
-							<div className="bird bird--two"></div>
-						</div>
-
-						<div className="bird-container bird-container--three">
-							<div className="bird bird--three"></div>
-						</div>
-
-						<div className="bird-container bird-container--four">
-							<div className="bird bird--four"></div>
-						</div>
+					<div>
+						<Sequence from={110} durationInFrames={3 * fps}>
+							<Animation
+								duration={16}
+								style={{
+									position: 'absolute',
+									top: '20%',
+									left: '0px',
+									animationTimingFunction: 'linear',
+									transform: 'scale(0) translateX(-10vw)',
+									animationIterationCount: 'infinite',
+									opacity: birdOpacity,
+								}}
+								f0={{transform: 'scale(0.3) translateX(-10vw)'}}
+								f10={{
+									transform: 'translateY(2vh) translateX(10vw) scale(0.4)',
+								}}
+								f20={{
+									transform: 'translateY(0vh) translateX(30vw) scale(0.5)',
+								}}
+								f30={{
+									transform: 'translateY(4vh) translateX(50vw) scale(0.6)',
+								}}
+								f40={{
+									transform: 'translateY(2vh) translateX(70vw) scale(0.6)',
+								}}
+								f50={{
+									transform: 'translateY(0vh) translateX(90vw) scale(0.6)',
+								}}
+								f60={{
+									transform: 'translateY(2vh) translateX(110vw) scale(0.6)',
+								}}
+								f100={{
+									transform: 'translateY(0vh) translateX(110vw) scale(0.6)',
+								}}
+							>
+								<div
+									className="bird"
+									style={{
+										backgroundPosition: `-${normalizedBirdStep()}px 0`,
+									}}
+								></div>
+							</Animation>
+						</Sequence>
+						<Sequence from={124} durationInFrames={3 * fps}>
+							<Animation
+								duration={16}
+								style={{
+									position: 'absolute',
+									top: '20%',
+									left: '0px',
+									animationTimingFunction: 'linear',
+									transform: 'scale(0.3) translateX(-10vw)',
+									opacity: birdOpacity,
+								}}
+								f0={{transform: 'scale(0.3) translateX(-10vw)'}}
+								f10={{
+									transform: 'translateY(2vh) translateX(10vw) scale(0.4)',
+								}}
+								f20={{
+									transform: 'translateY(0vh) translateX(30vw) scale(0.5)',
+								}}
+								f30={{
+									transform: 'translateY(4vh) translateX(50vw) scale(0.6)',
+								}}
+								f40={{
+									transform: 'translateY(2vh) translateX(70vw) scale(0.6)',
+								}}
+								f50={{
+									transform: 'translateY(0vh) translateX(90vw) scale(0.6)',
+								}}
+								f60={{
+									transform: 'translateY(2vh) translateX(110vw) scale(0.6)',
+								}}
+								f70={{
+									transform: 'translateY(2vh) translateX(120vw) scale(0.6)',
+								}}
+								f100={{
+									transform: 'translateY(0vh) translateX(120vw) scale(0.6)',
+								}}
+							>
+								<div
+									className="bird"
+									style={{
+										backgroundPosition: `-${normalizedBirdStep(5)}px 0`,
+									}}
+								></div>
+							</Animation>
+						</Sequence>
 					</div>
-
 					<svg
 						version="1.1"
 						id="Layer_1"

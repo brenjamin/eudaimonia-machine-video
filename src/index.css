@@ -5,7 +5,7 @@
 	--block: 'Bebas Neue', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Arvo:wght@400;700&family=Bebas+Neue&family=Fjalla+One&family=Jost:ital,wght@0,400;0,500;0,600;1,700&family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Arvo:wght@400;700&family=Bebas+Neue&family=Fjalla+One&family=Jost:ital,wght@0,400;0,500;0,600;1,700&family=Roboto:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Yeseva+One&display=swap');
 
 @keyframes spin {
 	from {
@@ -54,10 +54,9 @@ h1 {
 	background-size: auto 100%;
 	width: 88px;
 	height: 125px;
-	will-change: background-position;
-	animation-name: fly-cycle;
-	animation-timing-function: steps(10);
-	animation-iteration-count: infinite;
+	/* will-change: background-position;
+	animation-name: fly-cycle; */
+	/* npm */
 }
 .bird--one {
 	animation-duration: 1s;
@@ -78,12 +77,12 @@ h1 {
 .bird-container {
 	position: absolute;
 	top: 20%;
-	left: -10%;
+	left: 50px;
 	transform: scale(0) translateX(-10vw);
-	will-change: transform;
+	/* will-change: transform;
 	animation-name: fly-right-one;
 	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+	animation-iteration-count: infinite; */
 }
 .bird-container--one {
 	animation-duration: 15s;

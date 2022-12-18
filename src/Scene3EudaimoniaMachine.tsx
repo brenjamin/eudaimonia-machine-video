@@ -13,21 +13,21 @@ export const Scene3EudaimoniaMachine: React.FC = () => {
 	const slowSpin = interpolate(frame, [0, 180], [0, 360]);
 	const fastSpin = interpolate(frame, [0, 90], [0, 360]);
 	const reverseSpin = interpolate(frame, [0, 45], [0, -360]);
-	const opacity1 = interpolate(frame, [15, 16], [0, 1], {
+	const opacity1 = interpolate(frame, [25, 26], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity2 = interpolate(frame, [25, 26], [0, 1], {
+	const opacity2 = interpolate(frame, [40, 41], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const slideProgress = interpolate(frame, [100, 120], [0, 100], {
+	const slideProgress = interpolate(frame, [160, 190], [0, 100], {
 		extrapolateLeft: 'clamp',
 	});
 
-	const opacity3 = interpolate(frame, [125, 126], [0, 1]);
-	const opacity4 = interpolate(frame, [130, 131], [0, 1]);
-	const opacity5 = interpolate(frame, [135, 136], [0, 1]);
-	const opacity6 = interpolate(frame, [140, 141], [0, 1]);
-	const opacity7 = interpolate(frame, [145, 146], [0, 1]);
+	const opacity3 = interpolate(frame, [195, 196], [0, 1]);
+	const opacity4 = interpolate(frame, [200, 201], [0, 1]);
+	const opacity5 = interpolate(frame, [205, 206], [0, 1]);
+	const opacity6 = interpolate(frame, [210, 211], [0, 1]);
+	const opacity7 = interpolate(frame, [215, 216], [0, 1]);
 
 	const Title = styled.div`
 		font-family: var(--block);

@@ -13,11 +13,15 @@ export const Scene7OpenOffices: React.FC = () => {
 	const {width} = useVideoConfig();
 
 	const imageSlide = interpolate(frame, [0, 360], [width / 6, -width / 6]);
+	const imageOpacity = interpolate(frame, [0, 15], [0, 1]);
 
 	return (
 		<>
 			<AbsoluteFill
-				style={{transform: `scale(1.5) translateX(${imageSlide}px)`}}
+				style={{
+					opacity: imageOpacity,
+					transform: `scale(1.5) translateX(${imageSlide}px)`,
+				}}
 			>
 				<img src={openoffice} />
 			</AbsoluteFill>

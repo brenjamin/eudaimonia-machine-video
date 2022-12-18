@@ -11,7 +11,7 @@ const Title = styled.div`
 	font-family: var(--sans);
 	text-align: center;
 	font-size: 120px;
-	font-weight: 700;
+	font-weight: 600;
 `;
 
 const BlockTitle = styled.div`
@@ -25,16 +25,16 @@ export const Scene4Eudaimonia: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {width, height} = useVideoConfig();
 
-	const textSlideUp = interpolate(frame, [60, 90], [0, -height / 4.5], {
+	const textSlideUp = interpolate(frame, [200, 215], [0, -height / 4.5], {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
 	});
 
-	const firstFrameSlideUp = interpolate(frame, [120, 135], [0, -100], {
+	const firstFrameSlideUp = interpolate(frame, [345, 360], [0, -100], {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
 	});
-	const secondFrameSlideUp = interpolate(frame, [120, 135], [100, 0], {
+	const secondFrameSlideUp = interpolate(frame, [345, 360], [100, 0], {
 		extrapolateRight: 'clamp',
 	});
 
@@ -42,17 +42,21 @@ export const Scene4Eudaimonia: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const opacityProgress = interpolate(frame, [90, 105], [0, 1], {
+	const titleOpacity2 = interpolate(frame, [80, 90], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
 
-	const goodOpacity1 = interpolate(frame, [150, 151], [0, 1], {
+	const opacityProgress = interpolate(frame, [225, 235], [0, 1], {
+		extrapolateRight: 'clamp',
+	});
+
+	const goodOpacity1 = interpolate(frame, [435, 436], [0, 1], {
 		extrapolateLeft: 'clamp',
 	});
-	const goodOpacity2 = interpolate(frame, [160, 161], [0, 1], {
+	const goodOpacity2 = interpolate(frame, [444, 445], [0, 1], {
 		extrapolateLeft: 'clamp',
 	});
-	const goodOpacity3 = interpolate(frame, [170, 171], [0, 1], {
+	const goodOpacity3 = interpolate(frame, [453, 454], [0, 1], {
 		extrapolateLeft: 'clamp',
 	});
 
@@ -68,23 +72,27 @@ export const Scene4Eudaimonia: React.FC = () => {
 					style={{
 						height: '100%',
 						width: '100%',
-						padding: '400px',
+						padding: '320px',
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'space-between',
 						transform: `translateY(${textSlideUp}px)`,
 					}}
 				>
-					<Title>
-						εὐ
-						<br />
-						good
-					</Title>
-					<Title style={{opacity: titleOpacity}}>+</Title>
 					<Title style={{opacity: titleOpacity}}>
-						δαιμονία
+						<span style={{fontSize: '130px'}}>εὐ</span>
 						<br />
-						spirit
+						<span style={{fontWeight: '500'}}>
+							<em>good</em>
+						</span>
+					</Title>
+					<Title style={{opacity: titleOpacity2}}>+</Title>
+					<Title style={{opacity: titleOpacity2}}>
+						<span style={{fontSize: '130px'}}>δαιμονία</span>
+						<br />
+						<span style={{fontWeight: '500'}}>
+							<em>spirit</em>
+						</span>
 					</Title>
 				</div>
 				<div

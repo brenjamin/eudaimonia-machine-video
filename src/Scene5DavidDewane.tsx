@@ -19,7 +19,7 @@ export const Scene5DavidDewane: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const secondMachineSlide = interpolate(frame, [180, 200], [0, 100], {
+	const secondMachineSlide = interpolate(frame, [140, 260], [0, 100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -29,7 +29,7 @@ export const Scene5DavidDewane: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const titleSlide = interpolate(frame, [180, 200], [0, 100], {
+	const titleSlide = interpolate(frame, [140, 260], [0, 100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});

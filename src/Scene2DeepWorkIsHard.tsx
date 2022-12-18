@@ -6,6 +6,7 @@ import {
 	useVideoConfig,
 } from 'remotion';
 import styled from 'styled-components';
+import devices from './img/devices.svg';
 
 export const Scene2DeepWorkIsHard: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -17,25 +18,39 @@ export const Scene2DeepWorkIsHard: React.FC = () => {
 		text-align: center;
 	`;
 
-	const opacity1 = interpolate(frame, [10, 11], [0, 1], {
+	const opacity1 = interpolate(frame, [130, 131], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity2 = interpolate(frame, [20, 21], [0, 1], {
+	const opacity2 = interpolate(frame, [135, 136], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity3 = interpolate(frame, [30, 31], [0, 1], {
+	const opacity3 = interpolate(frame, [142, 143], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity4 = interpolate(frame, [40, 41], [0, 1], {
+	const opacity4 = interpolate(frame, [152, 153], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity5 = interpolate(frame, [50, 51], [0, 1], {
+	const opacity5 = interpolate(frame, [157, 159], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
+	const devicesProgress = interpolate(frame, [0, 120], [-100, 100]);
 
 	return (
 		<>
 			<AbsoluteFill style={{backgroundColor: 'var(--yellow)'}}>
+				<AbsoluteFill
+					style={{
+						alignItems: 'center',
+						justifyContent: 'center',
+						transform: `translateY(${devicesProgress}%)`,
+					}}
+				>
+					<img
+						style={{width: '50%', margin: '0 auto', filter: 'saturate(1.75)'}}
+						src={devices}
+						alt=""
+					/>
+				</AbsoluteFill>
 				<div
 					style={{
 						display: 'flex',

@@ -66,7 +66,7 @@ export const Scene10Salon: React.FC = () => {
 				<AbsoluteFill style={{opacity: imageOpacity, zIndex: '10'}}>
 					<AbsoluteFill
 						style={{
-							transform: `scale(1.75) translate(${imageSlide}px, 100px)`,
+							transform: `scale(1.7) translate(${imageSlide}px, 0)`,
 						}}
 					>
 						<img src={cafe} />

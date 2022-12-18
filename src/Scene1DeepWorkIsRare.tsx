@@ -22,19 +22,19 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 		[0, 1],
 		[-BOOK_WIDTH - 100, width / 12]
 	);
-	const calAnimation = interpolate(frame, [30, 45], [CAL_HEIGHT, 100], {
+	const calAnimation = interpolate(frame, [60, 75], [CAL_HEIGHT, 100], {
 		extrapolateRight: 'clamp',
 	});
 
-	const title1Animation = interpolate(frame, [60, 75], [1, 0], {
+	const title1Animation = interpolate(frame, [135, 150], [1, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title2Animation = interpolate(frame, [80, 95], [1, 0], {
+	const title2Animation = interpolate(frame, [155, 170], [1, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title3Animation = interpolate(frame, [100, 115], [1, 0], {
+	const title3Animation = interpolate(frame, [175, 190], [1, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});

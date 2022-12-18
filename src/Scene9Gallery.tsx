@@ -49,7 +49,7 @@ export const Scene9Gallery: React.FC = () => {
 		extrapolateLeft: 'clamp',
 	});
 
-	const emojiProgress = interpolate(frame, [180, 200], [-100, 0], {
+	const emojiProgress = interpolate(frame, [300, 320], [-100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -60,7 +60,7 @@ export const Scene9Gallery: React.FC = () => {
 				<AbsoluteFill style={{opacity: imageOpacity, zIndex: '10'}}>
 					<AbsoluteFill
 						style={{
-							transform: `scale(1.25) translateX(${imageSlide}px)`,
+							transform: `scale(1.5) translateX(${imageSlide}px)`,
 						}}
 					>
 						<img src={gallery} />
