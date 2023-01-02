@@ -38,14 +38,14 @@ export const Scene15Outro: React.FC = () => {
 
 	const likeAndSubscribeProgress = interpolate(
 		frame,
-		[fps * 21, fps * 21.5, fps * 32, fps * 32.5],
+		[fps * 21, fps * 21.5, fps * 30, fps * 30.5],
 		[-height / 6, 0, 0, height / 12],
 		{extrapolateRight: 'clamp'}
 	);
 
 	const likeAndSubscribeOpacity = interpolate(
 		frame,
-		[fps * 32, fps * 32.5],
+		[fps * 30, fps * 30.5],
 		[1, 0],
 		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
 	);

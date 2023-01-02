@@ -41,7 +41,7 @@ export const Main: React.FC = () => {
 			<Sequence from={1730} durationInFrames={750}>
 				<Scene6Building />
 			</Sequence>
-			<Sequence from={2465} durationInFrames={360}>
+			<Sequence from={2450} durationInFrames={375}>
 				<Scene7OpenOffices />
 			</Sequence>
 			<Sequence from={2810} durationInFrames={380}>
@@ -62,13 +62,13 @@ export const Main: React.FC = () => {
 			<Sequence from={4630} durationInFrames={720}>
 				<Scene13DeepWorkChambers />
 			</Sequence>
-			<Sequence from={5350} durationInFrames={210}>
+			<Sequence from={5350} durationInFrames={250}>
 				<Scene14EudaimoniaOutro />
 			</Sequence>
-			<Sequence from={5550} durationInFrames={1430}>
+			<Sequence from={5560} durationInFrames={1430}>
 				<OutroMusic />
 			</Sequence>
-			<Sequence from={5550} durationInFrames={1430}>
+			<Sequence from={5560} durationInFrames={1430}>
 				<Scene15Outro />
 			</Sequence>
 		</>

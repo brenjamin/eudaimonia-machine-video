@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {Main} from './Main';
 import {Scene1DeepWorkIsRare} from './Scene1DeepWorkIsRare';
+import {Scene1aKnowledgeWorkers} from './Scene1aKnowledgeWorkers';
 import {Scene2DeepWorkIsHard} from './Scene2DeepWorkIsHard';
 import {Scene3EudaimoniaMachine} from './Scene3EudaimoniaMachine';
 import {Scene4Eudaimonia} from './Scene4Eudaimonia';
@@ -23,7 +24,15 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Scene1DeepWorkIsRare"
 				component={Scene1DeepWorkIsRare}
-				durationInFrames={210}
+				durationInFrames={420}
+				fps={30}
+				width={1920}
+				height={1080}
+			/>
+			<Composition
+				id="Scene1aKnowledgeWorkers"
+				component={Scene1aKnowledgeWorkers}
+				durationInFrames={420}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -151,7 +160,7 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Main"
 				component={Main}
-				durationInFrames={6980}
+				durationInFrames={6990}
 				fps={30}
 				width={1920}
 				height={1080}

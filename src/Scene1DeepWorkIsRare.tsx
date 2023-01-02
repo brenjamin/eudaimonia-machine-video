@@ -4,13 +4,15 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
+	Sequence,
 } from 'remotion';
 import deepwork from './img/deep-work.jpeg';
 import calnewport from './img/cal-newport.png';
 import styled from 'styled-components';
+import {Animation} from 'remotion-animation';
 
-const BOOK_WIDTH = 400;
-const CAL_HEIGHT = 1000;
+const BOOK_WIDTH = 500;
+const CAL_HEIGHT = 1200;
 
 export const Scene1DeepWorkIsRare: React.FC = () => {
 	const {width, height, fps} = useVideoConfig();
@@ -26,40 +28,55 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const title1Animation = interpolate(frame, [135, 150], [1, 0], {
+	const title1Animation = interpolate(frame, [135, 150], [100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title2Animation = interpolate(frame, [155, 170], [1, 0], {
+	const title2Animation = interpolate(frame, [155, 170], [100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title3Animation = interpolate(frame, [175, 190], [1, 0], {
+	const title3Animation = interpolate(frame, [175, 190], [100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
+
+	const bgFilter = interpolate(frame, [120, 130], [0, 15], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+
+	const overlayOpacity = interpolate(frame, [120, 130], [0, 1], {
+		extrapolateRight: 'clamp',
+	});
+
+	const slideProgress = interpolate(
+		frame,
+		[0, 230, 231, 250],
+		[-100, -100, -100, 0],
+		{
+			extrapolateRight: 'clamp',
+		}
+	);
 
 	const Title = styled.div`
 		font-family: var(--sans);
 		font-weight: 800;
-		font-size: 70px;
-		padding: 6px 20px;
-		background-color: #ffdb58;
+		font-size: 80px;
 	`;
 
-	const TitleMask = styled.div`
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: var(--blue);
-		transform-origin: right;
+	const AltTitle = styled.div`
+		font-family: var(--sans);
+		font-weight: 600;
+		font-size: 75px;
+		text-align: center;
 	`;
 
 	return (
 		<>
-			<AbsoluteFill style={{backgroundColor: 'var(--blue)'}}>
+			<AbsoluteFill
+				style={{backgroundColor: 'var(--blue)', filter: `blur(${bgFilter}px)`}}
+			>
 				<div
 					style={{
 						height: '100%',
@@ -102,56 +119,118 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 						}}
 					/>
 				</div>
+			</AbsoluteFill>
+			<AbsoluteFill
+				style={{
+					opacity: overlayOpacity,
+					backgroundColor: 'rgba(252,245,95, .87)',
+				}}
+			>
 				<div
 					style={{
-						height: height / 2.5,
+						height: '100%',
 						width: '100%',
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
-						justifyContent: 'space-between',
+						justifyContent: 'space-evenly',
 						position: 'absolute',
 						top: '50%',
-						transform: 'translateY(-75%)',
+						transform: 'translateY(-50%)',
+						textAlign: 'center',
 					}}
 				>
+					<Title style={{clipPath: `inset(0 ${title1Animation}% 0 0)`}}>
+						💼 Professional activity
+					</Title>
 					<div
 						style={{
 							position: 'relative',
+							padding: '6px 20px',
+							overflow: 'hidden',
 						}}
 					>
-						<Title>🌟 Rare</Title>
-						<TitleMask
-							style={{
-								transform: `scaleX(${title1Animation})`,
-							}}
-						></TitleMask>
+						<Title style={{clipPath: `inset(0 ${title2Animation}% 0 0)`}}>
+							🔎 Performed in a state of
+							distraction&#8209;free&nbsp;concentration
+						</Title>
 					</div>
 					<div
 						style={{
 							position: 'relative',
 						}}
 					>
-						<Title>💰 Valuable</Title>
-						<TitleMask
-							style={{
-								transform: `scaleX(${title2Animation})`,
-							}}
-						></TitleMask>
-					</div>
-					<div
-						style={{
-							position: 'relative',
-						}}
-					>
-						<Title>😊 Life-Changing</Title>
-						<TitleMask
-							style={{
-								transform: `scaleX(${title3Animation})`,
-							}}
-						></TitleMask>
+						<Title style={{clipPath: `inset(0 ${title3Animation}% 0 0)`}}>
+							🧠 That pushes your cognitive capabilities
+							to&nbsp;their&nbsp;limit
+						</Title>
 					</div>
 				</div>
+			</AbsoluteFill>
+			<AbsoluteFill
+				style={{
+					backgroundColor: 'var(--blue)',
+					transform: `translateY(${slideProgress}%)`,
+				}}
+			>
+				<Sequence
+					from={250}
+					durationInFrames={Infinity}
+					style={{
+						position: 'relative',
+						height: '100%',
+						display: 'flex',
+						flexDirection: 'row',
+						justifyContent: 'center',
+						gap: '5rem',
+						alignItems: 'center',
+					}}
+				>
+					<div style={{width: '28%'}}>
+						<Animation
+							duration={2}
+							f0={{opacity: 0, transform: 'scale(1)'}}
+							f15={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f30={{opacity: 1, transform: 'scale(1)'}}
+						>
+							<AltTitle>
+								<span style={{fontSize: '180px'}}>🌟</span>
+								<br />
+								Rare
+							</AltTitle>
+						</Animation>
+					</div>
+					<div style={{width: '28%'}}>
+						<Animation
+							duration={2}
+							f0={{opacity: 0, transform: 'scale(1)'}}
+							f35={{opacity: 0, transform: 'scale(1)'}}
+							f50={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f55={{opacity: 1, transform: 'scale(1)'}}
+						>
+							<AltTitle>
+								<span style={{fontSize: '180px'}}>💰</span>
+								<br />
+								Valuable
+							</AltTitle>
+						</Animation>
+					</div>
+					<div style={{width: '28%'}}>
+						<Animation
+							duration={2}
+							f0={{opacity: 0, transform: 'scale(1)'}}
+							f70={{opacity: 0, transform: 'scale(1)'}}
+							f85={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f100={{opacity: 1, transform: 'scale(1)'}}
+						>
+							<AltTitle>
+								<span style={{fontSize: '180px'}}>😊</span>
+								<br />
+								Life-Changing
+							</AltTitle>
+						</Animation>
+					</div>
+				</Sequence>
 			</AbsoluteFill>
 		</>
 	);
