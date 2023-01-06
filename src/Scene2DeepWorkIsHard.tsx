@@ -18,19 +18,19 @@ export const Scene2DeepWorkIsHard: React.FC = () => {
 		text-align: center;
 	`;
 
-	const opacity1 = interpolate(frame, [130, 131], [0, 1], {
+	const opacity1 = interpolate(frame, [145, 146], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity2 = interpolate(frame, [135, 136], [0, 1], {
+	const opacity2 = interpolate(frame, [150, 151], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity3 = interpolate(frame, [142, 143], [0, 1], {
+	const opacity3 = interpolate(frame, [157, 158], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity4 = interpolate(frame, [152, 153], [0, 1], {
+	const opacity4 = interpolate(frame, [168, 169], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity5 = interpolate(frame, [157, 159], [0, 1], {
+	const opacity5 = interpolate(frame, [173, 174], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
 	const devicesProgress = interpolate(frame, [0, 120], [-100, 100]);

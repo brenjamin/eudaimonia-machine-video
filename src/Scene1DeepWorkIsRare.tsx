@@ -32,11 +32,11 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title2Animation = interpolate(frame, [155, 170], [100, 0], {
+	const title2Animation = interpolate(frame, [180, 195], [100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const title3Animation = interpolate(frame, [175, 190], [100, 0], {
+	const title3Animation = interpolate(frame, [260, 275], [100, 0], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -52,7 +52,7 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 
 	const slideProgress = interpolate(
 		frame,
-		[0, 230, 231, 250],
+		[0, 350, 351, 370],
 		[-100, -100, -100, 0],
 		{
 			extrapolateRight: 'clamp',
@@ -174,7 +174,7 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 				}}
 			>
 				<Sequence
-					from={250}
+					from={410}
 					durationInFrames={Infinity}
 					style={{
 						position: 'relative',
@@ -188,10 +188,11 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 				>
 					<div style={{width: '28%'}}>
 						<Animation
-							duration={2}
+							duration={4}
 							f0={{opacity: 0, transform: 'scale(1)'}}
-							f15={{opacity: 0.5, transform: 'scale(1.1)'}}
-							f30={{opacity: 1, transform: 'scale(1)'}}
+							f5={{opacity: 0, transform: 'scale(1)'}}
+							f10={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f15={{opacity: 1, transform: 'scale(1)'}}
 						>
 							<AltTitle>
 								<span style={{fontSize: '180px'}}>🌟</span>
@@ -202,11 +203,11 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 					</div>
 					<div style={{width: '28%'}}>
 						<Animation
-							duration={2}
+							duration={4}
 							f0={{opacity: 0, transform: 'scale(1)'}}
-							f35={{opacity: 0, transform: 'scale(1)'}}
-							f50={{opacity: 0.5, transform: 'scale(1.1)'}}
-							f55={{opacity: 1, transform: 'scale(1)'}}
+							f30={{opacity: 0, transform: 'scale(1)'}}
+							f35={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f40={{opacity: 1, transform: 'scale(1)'}}
 						>
 							<AltTitle>
 								<span style={{fontSize: '180px'}}>💰</span>
@@ -217,11 +218,11 @@ export const Scene1DeepWorkIsRare: React.FC = () => {
 					</div>
 					<div style={{width: '28%'}}>
 						<Animation
-							duration={2}
+							duration={4}
 							f0={{opacity: 0, transform: 'scale(1)'}}
 							f70={{opacity: 0, transform: 'scale(1)'}}
-							f85={{opacity: 0.5, transform: 'scale(1.1)'}}
-							f100={{opacity: 1, transform: 'scale(1)'}}
+							f75={{opacity: 0.5, transform: 'scale(1.1)'}}
+							f80={{opacity: 1, transform: 'scale(1)'}}
 						>
 							<AltTitle>
 								<span style={{fontSize: '180px'}}>😊</span>

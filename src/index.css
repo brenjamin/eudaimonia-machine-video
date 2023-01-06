@@ -157,3 +157,9 @@ h1 {
 		transform: translateY(0vh) translateX(110vw) scale(0.45);
 	}
 }
+
+#usmap path {
+	stroke-linejoin: round;
+	stroke: #000;
+	fill: blue;
+}

@@ -16,6 +16,7 @@ import {Scene14EudaimoniaOutro} from './Scene14EudaimoniaOutro';
 import {Scene15Outro} from './Scene15Outro';
 import {Narration} from './Narration';
 import {OutroMusic} from './OutroMusic';
+import {Scene1aKnowledgeWorkers} from './Scene1aKnowledgeWorkers';
 
 export const Main: React.FC = () => {
 	return (
@@ -23,16 +24,19 @@ export const Main: React.FC = () => {
 			<Sequence from={0} durationInFrames={6900}>
 				<Narration />
 			</Sequence>
-			<Sequence from={0} durationInFrames={210}>
+			<Sequence from={0} durationInFrames={540}>
 				<Scene1DeepWorkIsRare />
 			</Sequence>
-			<Sequence from={210} durationInFrames={180}>
+			<Sequence from={540} durationInFrames={760}>
+				<Scene1aKnowledgeWorkers />
+			</Sequence>
+			<Sequence from={1300} durationInFrames={220}>
 				<Scene2DeepWorkIsHard />
 			</Sequence>
-			<Sequence from={390} durationInFrames={270}>
+			<Sequence from={1520} durationInFrames={270}>
 				<Scene3EudaimoniaMachine />
 			</Sequence>
-			<Sequence from={660} durationInFrames={630}>
+			{/* <Sequence from={660} durationInFrames={630}>
 				<Scene4Eudaimonia />
 			</Sequence>
 			<Sequence from={1290} durationInFrames={440}>
@@ -70,7 +74,7 @@ export const Main: React.FC = () => {
 			</Sequence>
 			<Sequence from={5560} durationInFrames={1430}>
 				<Scene15Outro />
-			</Sequence>
+			</Sequence> */}
 		</>
 	);
 };
