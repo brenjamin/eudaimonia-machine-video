@@ -94,7 +94,6 @@ export const Scene8MachinePurpose: React.FC = () => {
 			<AbsoluteFill
 				style={{
 					background: 'var(--yellow)',
-					opacity: mainOpacity,
 				}}
 			>
 				<AbsoluteFill>

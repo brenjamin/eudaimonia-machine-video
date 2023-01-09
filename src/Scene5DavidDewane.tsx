@@ -14,22 +14,23 @@ export const Scene5DavidDewane: React.FC = () => {
 	const slowSpin = interpolate(frame, [0, 180], [0, 360]);
 	const fastSpin = interpolate(frame, [0, 90], [0, 360]);
 	const reverseSpin = interpolate(frame, [0, 45], [0, -360]);
-	const machineSlide = interpolate(frame, [100, 120], [0, -25], {
+
+	const machineSlide = interpolate(frame, [260, 280], [0, -25], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const secondMachineSlide = interpolate(frame, [140, 260], [0, 100], {
+	const secondMachineSlide = interpolate(frame, [350, 470], [0, 100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const davidSlide = interpolate(frame, [100, 120], [0, -75], {
+	const davidSlide = interpolate(frame, [260, 280], [0, -75], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
 
-	const titleSlide = interpolate(frame, [140, 260], [0, 100], {
+	const titleSlide = interpolate(frame, [350, 470], [0, 100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});

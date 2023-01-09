@@ -36,6 +36,12 @@ export const Scene6Building: React.FC = () => {
 		easing: Easing.back(),
 	});
 
+	const thirdBuildingSlide = interpolate(frame, [810, 840], [0, -150], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+		easing: Easing.back(),
+	});
+
 	const diagramSlide = interpolate(frame, [220, 240], [0, -100], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
@@ -61,6 +67,86 @@ export const Scene6Building: React.FC = () => {
 		font-size: 60px;
 		text-align: center;
 	`;
+
+	const AltTitle = styled.div`
+		font-family: var(--sans);
+		font-weight: 500;
+		font-size: 75px;
+		text-align: center;
+	`;
+
+	const machineTranslate = interpolate(frame, [840, 850], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const machineOpacity = interpolate(frame, [840, 850], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const artifactTranslate = interpolate(frame, [910, 920], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const artifactOpacity = interpolate(frame, [910, 920], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const paperTranslate = interpolate(frame, [1060, 1070], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const paperOpacity = interpolate(frame, [1060, 1070], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const bookTranslate = interpolate(frame, [1090, 1100], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const bookOpacity = interpolate(frame, [1090, 1100], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const laptopTranslate = interpolate(frame, [1120, 1130], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const laptopOpacity = interpolate(frame, [1120, 1130], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const deviceTranslate = interpolate(frame, [1290, 1300], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const deviceOpacity = interpolate(frame, [1290, 1300], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const mobileTranslate = interpolate(frame, [1490, 1500], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const mobileOpacity = interpolate(frame, [1490, 1500], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const developerTranslate = interpolate(frame, [1520, 1530], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const developerOpacity = interpolate(frame, [1520, 1530], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const waveTranslate = interpolate(frame, [1550, 1560], [-20, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const waveOpacity = interpolate(frame, [1550, 1560], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
 	return (
 		<>
@@ -235,21 +321,6 @@ export const Scene6Building: React.FC = () => {
 						<rect x="167.184" y="237.714" width="177.633" height="15.673" />
 						<rect x="167.184" y="279.51" width="177.633" height="15.673" />
 						<rect x="167.184" y="321.306" width="177.633" height="15.673" />
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
 					</svg>
 				</div>
 				<div
@@ -847,25 +918,189 @@ export const Scene6Building: React.FC = () => {
 									height="13"
 								/>
 							</g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
-							<g></g>
 						</svg>
 					</div>
 				</div>
 			</AbsoluteFill>
+			<Sequence from={690} durationInFrames={Infinity}>
+				<AbsoluteFill
+					style={{
+						backgroundColor: 'var(--yellow)',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<svg
+						version="1.1"
+						id="Layer_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 512 512"
+						xml:space="preserve"
+						style={{
+							enableBackground: 'new 0 0 512 512',
+							width: '50%',
+							transform: `translateX(${thirdBuildingSlide}%)`,
+						}}
+					>
+						<g>
+							<polygon
+								style={{fill: '#C8DA2E'}}
+								points="52.245,386.612 52.245,250.775 130.612,250.775 146.286,250.775 146.286,386.612 	"
+							/>
+							<polygon
+								style={{fill: '#C8DA2E'}}
+								points="381.388,386.612 365.714,386.612 365.714,250.775 381.388,250.775 459.755,250.775 
+		459.755,386.612 	"
+							/>
+						</g>
+						<polygon
+							style={{fill: '#B7B8B9'}}
+							points="407.51,31.347 407.51,73.143 381.388,73.143 130.612,73.143 104.49,73.143 104.49,31.347 "
+						/>
+						<polygon
+							style={{fill: '#F2F2F2'}}
+							points="256,386.612 308.245,386.612 308.245,480.653 203.755,480.653 203.755,386.612 "
+						/>
+						<polygon
+							style={{fill: '#E6E6E6'}}
+							points="365.714,250.775 381.388,250.775 381.388,73.143 130.612,73.143 130.612,250.775 
+	146.286,250.775 146.286,386.612 130.612,386.612 130.612,480.653 203.755,480.653 203.755,386.612 308.245,386.612 
+	308.245,480.653 381.388,480.653 381.388,386.612 365.714,386.612 "
+						/>
+						<path
+							d="M420.571,472.816v-78.367h47.02v-151.51h-78.367V80.98h26.122V23.51H96.653V80.98h26.122v161.959H44.408v151.51h47.02
+	v78.367H0v15.673h512v-15.673H420.571z M404.898,472.816h-15.673v-78.367h15.673V472.816z M451.918,378.775h-31.347v-49.633h-15.673
+	v49.633h-31.347V258.612h78.367V378.775z M112.327,39.184h287.347v26.122H112.327V39.184z M138.449,80.98h235.102v161.959h-15.673
+	v151.51h15.673v78.367h-57.469v-78.367h13.061v-15.673H182.857v15.673h13.061v78.367h-57.469v-78.367h15.673v-151.51h-15.673V80.98z
+	 M248.163,394.449v54.857h15.673v-54.857h36.571v78.367h-88.816v-78.367H248.163z M60.082,378.775V258.612h78.367v120.163h-31.347
+	v-49.633H91.429v49.633H60.082z M107.102,394.449h15.673v78.367h-15.673V394.449z"
+						/>
+						<rect x="167.184" y="112.327" width="177.633" height="15.673" />
+						<rect x="167.184" y="154.122" width="177.633" height="15.673" />
+						<rect x="167.184" y="195.918" width="177.633" height="15.673" />
+						<rect x="167.184" y="237.714" width="177.633" height="15.673" />
+						<rect x="167.184" y="279.51" width="177.633" height="15.673" />
+						<rect x="167.184" y="321.306" width="177.633" height="15.673" />
+					</svg>
+					<div
+						style={{
+							position: 'absolute',
+							top: '50px',
+							left: '50%',
+							transform: 'translateX(-50%)',
+							width: '75%',
+						}}
+					>
+						<Title
+							style={{
+								fontSize: '150px',
+								opacity: machineOpacity,
+								transform: `translateY(${machineTranslate}px)`,
+							}}
+						>
+							Machine
+						</Title>
+						<AltTitle
+							style={{
+								marginTop: '50px',
+								opacity: artifactOpacity,
+								transform: `translateY(${artifactTranslate}px)`,
+							}}
+						>
+							1. An artifact used to make other artifacts
+						</AltTitle>
+						<div
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								fontSize: '100px',
+								justifyContent: 'center',
+								gap: '200px',
+								marginTop: '20px',
+							}}
+						>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: paperOpacity,
+									transform: `translateY(${paperTranslate}px)`,
+								}}
+							>
+								📝
+							</span>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: bookOpacity,
+									transform: `translateY(${bookTranslate}px)`,
+								}}
+							>
+								📚
+							</span>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: laptopOpacity,
+									transform: `translateY(${laptopTranslate}px)`,
+								}}
+							>
+								💻
+							</span>
+						</div>
+						<AltTitle
+							style={{
+								marginTop: '100px',
+								opacity: deviceOpacity,
+								transform: `translateY(${deviceTranslate}px)`,
+							}}
+						>
+							2. From the Greek <span style={{fontSize: '70px'}}>μηχανή</span>,
+							a cunning device that can outwit nature
+						</AltTitle>
+						<div
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								fontSize: '100px',
+								justifyContent: 'center',
+								gap: '200px',
+								marginTop: '20px',
+							}}
+						>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: mobileOpacity,
+									transform: `translateY(${mobileTranslate}px)`,
+								}}
+							>
+								📱
+							</span>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: developerOpacity,
+									transform: `translateY(${developerTranslate}px)`,
+								}}
+							>
+								👨‍💻
+							</span>
+							<span
+								style={{
+									display: 'inline-block',
+									opacity: waveOpacity,
+									transform: `translateY(${waveTranslate}px)`,
+								}}
+							>
+								🌊
+							</span>
+						</div>
+					</div>
+				</AbsoluteFill>
+			</Sequence>
 		</>
 	);
 };

@@ -4,6 +4,7 @@ import {
 	spring,
 	useCurrentFrame,
 	useVideoConfig,
+	Easing,
 } from 'remotion';
 import styled from 'styled-components';
 import doctor from './img/doctor.png';
@@ -72,20 +73,29 @@ export const Scene1aKnowledgeWorkers: React.FC = () => {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
 	});
-
-	const USOpacity = interpolate(frame, [370, 371], [0, 1], {
+	const millionOpacity = interpolate(frame, [330, 331], [0, 1], {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
 	});
 
-	const billionOpacity = interpolate(frame, [430, 431], [0, 1], {
+	const USScale = interpolate(frame, [370, 380], [0, 1], {
+		extrapolateRight: 'clamp',
+		extrapolateLeft: 'clamp',
+		easing: Easing.elastic(),
+	});
+	const oneOpacity = interpolate(frame, [430, 431], [0, 1], {
+		extrapolateRight: 'clamp',
+		extrapolateLeft: 'clamp',
+	});
+	const billionOpacity = interpolate(frame, [435, 436], [0, 1], {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
 	});
 
-	const globeOpacity = interpolate(frame, [450, 451], [0, 1], {
+	const globeScale = interpolate(frame, [450, 460], [0, 1], {
 		extrapolateRight: 'clamp',
 		extrapolateLeft: 'clamp',
+		easing: Easing.elastic(),
 	});
 
 	const knowledgeWorkerFocusOpacity = interpolate(frame, [509, 510], [0, 1], {
@@ -235,12 +245,12 @@ export const Scene1aKnowledgeWorkers: React.FC = () => {
 				>
 					<div style={{width: '45%'}}>
 						<Title style={{fontSize: '175px', opacity: oneHundredOpacity}}>
-							100
+							<span style={{opacity: oneHundredOpacity}}>100</span>
 							<br />
-							Million
+							<span style={{opacity: millionOpacity}}>Million</span>
 						</Title>
 					</div>
-					<div style={{width: '45%', opacity: USOpacity}}>
+					<div style={{width: '45%', transform: `scale(${USScale})`}}>
 						<svg
 							xmlns:dc="http://purl.org/dc/elements/1.1/"
 							xmlns:cc="http://creativecommons.org/ns#"
@@ -838,13 +848,13 @@ export const Scene1aKnowledgeWorkers: React.FC = () => {
 					}}
 				>
 					<div style={{width: '45%'}}>
-						<Title style={{fontSize: '175px', opacity: billionOpacity}}>
-							1
+						<Title style={{fontSize: '175px'}}>
+							<span style={{opacity: oneOpacity}}>1</span>
 							<br />
-							Billion
+							<span style={{opacity: billionOpacity}}>Billion</span>
 						</Title>
 					</div>
-					<div style={{width: '45%', opacity: globeOpacity}}>
+					<div style={{width: '45%', transform: `scale(${globeScale})`}}>
 						<svg
 							width="450px"
 							height="450px"

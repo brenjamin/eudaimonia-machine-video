@@ -13,10 +13,10 @@ export const Scene3EudaimoniaMachine: React.FC = () => {
 	const slowSpin = interpolate(frame, [0, 180], [0, 360]);
 	const fastSpin = interpolate(frame, [0, 90], [0, 360]);
 	const reverseSpin = interpolate(frame, [0, 45], [0, -360]);
-	const opacity1 = interpolate(frame, [25, 26], [0, 1], {
+	const opacity1 = interpolate(frame, [12, 13], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
-	const opacity2 = interpolate(frame, [40, 41], [0, 1], {
+	const opacity2 = interpolate(frame, [27, 28], [0, 1], {
 		extrapolateRight: 'clamp',
 	});
 	const slideProgress = interpolate(frame, [160, 190], [0, 100], {
@@ -590,21 +590,6 @@ export const Scene3EudaimoniaMachine: React.FC = () => {
 								height="13"
 							/>
 						</g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
 					</svg>
 				</div>
 				<div
