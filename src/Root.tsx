@@ -5,6 +5,7 @@ import {Scene1aKnowledgeWorkers} from './Scene1aKnowledgeWorkers';
 import {Scene2DeepWorkIsHard} from './Scene2DeepWorkIsHard';
 import {Scene3EudaimoniaMachine} from './Scene3EudaimoniaMachine';
 import {Scene4Eudaimonia} from './Scene4Eudaimonia';
+import {Scene4aAchieveEudaimonia} from './Scene4aAchieveEudaimonia';
 import {Scene5DavidDewane} from './Scene5DavidDewane';
 import {Scene6Building} from './Scene6Building';
 import {Scene7OpenOffices} from './Scene7OpenOffices';
@@ -57,6 +58,14 @@ export const RemotionRoot: React.FC = () => {
 				id="Scene4Eudaimonia"
 				component={Scene4Eudaimonia}
 				durationInFrames={240}
+				fps={30}
+				width={1920}
+				height={1080}
+			/>
+			<Composition
+				id="Scene4aAchieveEudaimonia"
+				component={Scene4aAchieveEudaimonia}
+				durationInFrames={940}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -136,7 +145,7 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Scene14EudaimoniaOutro"
 				component={Scene14EudaimoniaOutro}
-				durationInFrames={240}
+				durationInFrames={1020}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -160,7 +169,7 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Main"
 				component={Main}
-				durationInFrames={15000}
+				durationInFrames={10350}
 				fps={30}
 				width={1920}
 				height={1080}

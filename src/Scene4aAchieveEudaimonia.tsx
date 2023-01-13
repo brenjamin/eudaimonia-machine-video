@@ -120,7 +120,12 @@ export const Scene4aAchieveEudaimonia: React.FC = () => {
 		extrapolateRight: 'clamp',
 	});
 
-	const photosProgress = interpolate(frame, [670, 920], [25, -190], {
+	const photosProgress = interpolate(frame, [650, 920], [25, -190], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+
+	const achieveOpacity = interpolate(frame, [650, 670], [0, 1], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -533,7 +538,6 @@ export const Scene4aAchieveEudaimonia: React.FC = () => {
 				<AbsoluteFill
 					style={{
 						backgroundColor: 'var(--yellow)',
-						transform: `translateY(0%)`,
 					}}
 				>
 					<div
@@ -610,11 +614,12 @@ export const Scene4aAchieveEudaimonia: React.FC = () => {
 					</div>
 				</AbsoluteFill>
 			</Sequence>
-			<Sequence from={670} durationInFrames={Infinity}>
+			<Sequence from={650} durationInFrames={Infinity}>
 				<AbsoluteFill
 					style={{
 						backgroundColor: 'var(--blue)',
 						justifyContent: 'center',
+						opacity: achieveOpacity,
 					}}
 				>
 					<div

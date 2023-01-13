@@ -174,10 +174,16 @@ h1 {
 #earth {
 	width: 500px;
 	height: 500px;
-	background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
 	border-radius: 50%;
-	background-size: 1050px;
+	filter: brightness(1.25);
+}
+#earth::after {
 	box-shadow: inset 8px 24px 80px 16px rgb(0, 0, 0),
 		inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
-	filter: brightness(1.35);
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }

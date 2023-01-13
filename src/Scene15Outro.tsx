@@ -38,31 +38,31 @@ export const Scene15Outro: React.FC = () => {
 
 	const likeAndSubscribeProgress = interpolate(
 		frame,
-		[fps * 2, fps * 2.5, fps * 12, fps * 12.5],
+		[fps * 2, fps * 2.5, fps * 12, fps * 12.75],
 		[-height / 6, 0, 0, height / 12],
 		{extrapolateRight: 'clamp'}
 	);
 
 	const likeAndSubscribeOpacity = interpolate(
 		frame,
-		[fps * 12, fps * 12.5],
+		[fps * 12, fps * 12.75],
 		[1, 0],
 		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
 	);
-	const cursorScale = interpolate(
-		frame,
-		[fps * 3, fps * 3.3, fps * 6.6, fps * 6.8],
-		[0, 1, 1, 0],
-		{
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		}
-	);
+	const cursorScale = interpolate(frame, [fps * 3, fps * 3.3], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+
+	const cursorOpacity = interpolate(frame, [fps * 10, fps * 10.2], [1, 0], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
 	const cursorTranslateX = interpolate(
 		frame,
-		[fps * 4, fps * 4.5, fps * 5.5, fps * 6.5],
-		[-50, -160, -160, 70],
+		[fps * 4, fps * 4.5, fps * 5.5, fps * 6.5, fps * 7.5, fps * 8.5],
+		[-50, -250, -250, 70, 70, 250],
 		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
 	);
 
@@ -127,6 +127,42 @@ export const Scene15Outro: React.FC = () => {
 	const slideIn = interpolate(frame, [0, 30], [100, 0], {
 		extrapolateRight: 'clamp',
 	});
+
+	const bellFill = interpolate(frame, [fps * 8.5, fps * 8.6], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const bellRotate = interpolate(
+		frame,
+		[
+			fps * 8.6,
+			fps * 8.7,
+			fps * 8.8,
+			fps * 8.9,
+			fps * 9,
+			fps * 9.1,
+			fps * 9.2,
+			fps * 9.3,
+			fps * 9.4,
+		],
+		[0, 5, -5, 4, -4, 2, -2, 1, 0],
+		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}
+	);
+
+	const bellNoiseOpacity = interpolate(frame, [fps * 8.6, fps * 8.7], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+
+	const bellNoiseTranslate = interpolate(
+		frame,
+		[fps * 8.6, fps * 8.7],
+		[2, 0],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
 
 	return (
 		<AbsoluteFill style={{transform: `translateX(${slideIn}%)`}}>
@@ -199,6 +235,7 @@ export const Scene15Outro: React.FC = () => {
 									transformOrigin: 'center center',
 									transformBox: 'fill-box',
 									zIndex: '10',
+									opacity: cursorOpacity,
 								}}
 							>
 								<path
@@ -279,13 +316,38 @@ export const Scene15Outro: React.FC = () => {
 							viewBox="0 0 24 24"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							transform={`rotate(${bellRotate})`}
+							style={{
+								transformOrigin: 'top center',
+								transformBox: 'fill-box',
+							}}
 						>
 							<path
-								d="M15.0002 19C15.0002 20.6569 13.6571 22 12.0002 22C10.3434 22 9.00025 20.6569 9.00025 19M13.7968 6.23856C14.2322 5.78864 14.5002 5.17562 14.5002 4.5C14.5002 3.11929 13.381 2 12.0002 2C10.6195 2 9.50025 3.11929 9.50025 4.5C9.50025 5.17562 9.76825 5.78864 10.2037 6.23856M2.54707 8.32296C2.53272 6.87161 3.3152 5.51631 4.57928 4.80306M21.4534 8.32296C21.4678 6.87161 20.6853 5.51631 19.4212 4.80306M18.0002 11.2C18.0002 9.82087 17.3681 8.49823 16.2429 7.52304C15.1177 6.54786 13.5915 6 12.0002 6C10.4089 6 8.88283 6.54786 7.75761 7.52304C6.63239 8.49823 6.00025 9.82087 6.00025 11.2C6.00025 13.4818 5.43438 15.1506 4.72831 16.3447C3.92359 17.7056 3.52122 18.3861 3.53711 18.5486C3.55529 18.7346 3.58876 18.7933 3.73959 18.9036C3.87142 19 4.53376 19 5.85844 19H18.1421C19.4667 19 20.1291 19 20.2609 18.9036C20.4117 18.7933 20.4452 18.7346 20.4634 18.5486C20.4793 18.3861 20.0769 17.7056 19.2722 16.3447C18.5661 15.1506 18.0002 13.4818 18.0002 11.2Z"
 								stroke="#000000"
-								stroke-width="2"
+								fill="white"
+								fillOpacity={bellFill}
+								stroke-width="1"
 								stroke-linecap="round"
 								stroke-linejoin="round"
+								d="M15.0002 19C15.0002 20.6569 13.6571 22 12.0002 22C10.3434 22 9.00025 20.6569 9.00025 19M18.0002 11.2C18.0002 9.82087 17.3681 8.49823 16.2429 7.52304C15.1177 6.54786 13.5915 6 12.0002 6C10.4089 6 8.88283 6.54786 7.75761 7.52304C6.63239 8.49823 6.00025 9.82087 6.00025 11.2C6.00025 13.4818 5.43438 15.1506 4.72831 16.3447C3.92359 17.7056 3.52122 18.3861 3.53711 18.5486C3.55529 18.7346 3.58876 18.7933 3.73959 18.9036C3.87142 19 4.53376 19 5.85844 19H18.1421C19.4667 19 20.1291 19 20.2609 18.9036C20.4117 18.7933 20.4452 18.7346 20.4634 18.5486C20.4793 18.3861 20.0769 17.7056 19.2722 16.3447C18.5661 15.1506 18.0002 13.4818 18.0002 11.2ZM18.0002 11.2C18.0002 9.82087 17.3681 8.49823 16.2429 7.52304C15.1177 6.54786 13.5915 6 12.0002 6C10.4089 6 8.88283 6.54786 7.75761 7.52304C6.63239 8.49823 6.00025 9.82087 6.00025 11.2C6.00025 13.4818 5.43438 15.1506 4.72831 16.3447C3.92359 17.7056 3.52122 18.3861 3.53711 18.5486C3.55529 18.7346 3.58876 18.7933 3.73959 18.9036C3.87142 19 4.53376 19 5.85844 19H18.1421C19.4667 19 20.1291 19 20.2609 18.9036C20.4117 18.7933 20.4452 18.7346 20.4634 18.5486C20.4793 18.3861 20.0769 17.7056 19.2722 16.3447C18.5661 15.1506 18.0002 13.4818 18.0002 11.2ZM13.7968 6.23856C14.2322 5.78864 14.5002 5.17562 14.5002 4.5C14.5002 3.11929 13.381 2 12.0002 2C10.6195 2 9.50025 3.11929 9.50025 4.5C9.50025 5.17562 9.76825 5.78864 10.2037 6.23856"
+							/>
+							<path
+								stroke="black"
+								stroke-width="1"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M2.54707 8.32296C2.53272 6.87161 3.3152 5.51631 4.57928 4.80306"
+								opacity={bellNoiseOpacity}
+								transform={`translate(0, ${bellNoiseTranslate})`}
+							/>
+							<path
+								stroke="black"
+								stroke-width="1"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M21.4534 8.32296C21.4678 6.87161 20.6853 5.51631 19.4212 4.80306"
+								opacity={bellNoiseOpacity}
+								transform={`translate(0, ${bellNoiseTranslate})`}
 							/>
 						</svg>
 					</div>

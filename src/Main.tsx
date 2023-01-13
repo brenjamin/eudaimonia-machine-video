@@ -22,7 +22,7 @@ import {Scene1aKnowledgeWorkers} from './Scene1aKnowledgeWorkers';
 export const Main: React.FC = () => {
 	return (
 		<>
-			<Sequence from={0} durationInFrames={15000}>
+			<Sequence from={0} durationInFrames={10350}>
 				<Narration />
 			</Sequence>
 			<Sequence from={0} durationInFrames={540}>
