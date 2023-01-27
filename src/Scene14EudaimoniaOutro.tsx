@@ -9,6 +9,7 @@ import {
 import styled from 'styled-components';
 import machine from './img/eudaimonia-machine.png';
 import thinker from './img/thinker.png';
+import earth from './img/earth.jpeg';
 import {Animation} from 'remotion-animation';
 
 export const Scene14EudaimoniaOutro: React.FC = () => {
@@ -824,13 +825,9 @@ export const Scene14EudaimoniaOutro: React.FC = () => {
 								transform: `translateX(${earthBg}%)`,
 							}}
 						>
+							<img src={earth} alt="" style={{height: '100%', width: 'auto'}} />
 							<img
-								src="https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg"
-								alt=""
-								style={{height: '100%', width: 'auto'}}
-							/>
-							<img
-								src="https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg"
+								src={earth}
 								alt=""
 								style={{
 									height: '100%',
@@ -1406,7 +1403,7 @@ export const Scene14EudaimoniaOutro: React.FC = () => {
 								fontSize: '65px',
 							}}
 						>
-							Would the Eudaimonia Machine promote well-being, happiness and
+							Would the Eudaimonia Machine promote well-being, happiness, and
 							flourishing in your life?
 						</AltTitle>
 					</div>
