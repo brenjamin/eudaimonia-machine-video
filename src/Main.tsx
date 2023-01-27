@@ -49,7 +49,7 @@ export const Main: React.FC = () => {
 			<Sequence from={4100} durationInFrames={1620}>
 				<Scene6Building />
 			</Sequence>
-			<Sequence from={5720} durationInFrames={375}>
+			<Sequence from={5700} durationInFrames={395}>
 				<Scene7OpenOffices />
 			</Sequence>
 			<Sequence from={6095} durationInFrames={380}>
