@@ -13,7 +13,7 @@ export const Scene7OpenOffices: React.FC = () => {
 
 	const imageSlide = interpolate(frame, [0, 420], [width / 6, -width / 6]);
 
-	const imageOpacity = interpolate(frame, [0, 20], [0, 1], {
+	const imageOpacity = interpolate(frame, [0, 25], [0, 1], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});

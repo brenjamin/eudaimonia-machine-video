@@ -1,4 +1,4 @@
-import {Composition} from 'remotion';
+import {Composition, Still} from 'remotion';
 import {Main} from './Main';
 import {Scene1DeepWorkIsRare} from './Scene1DeepWorkIsRare';
 import {Scene1aKnowledgeWorkers} from './Scene1aKnowledgeWorkers';
@@ -18,6 +18,7 @@ import {Scene13DeepWorkChambers} from './Scene13DeepWorkChambers';
 import {Scene14EudaimoniaOutro} from './Scene14EudaimoniaOutro';
 import {Scene15Outro} from './Scene15Outro';
 import {Narration} from './Narration';
+import {Thumbnail} from './Thumbnail';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -174,6 +175,7 @@ export const RemotionRoot: React.FC = () => {
 				width={1920}
 				height={1080}
 			/>
+			<Still id="Thumbnail" component={Thumbnail} width={1920} height={1080} />
 		</>
 	);
 };
