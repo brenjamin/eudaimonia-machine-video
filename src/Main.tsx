@@ -46,10 +46,10 @@ export const Main: React.FC = () => {
 			<Sequence from={3480} durationInFrames={620}>
 				<Scene5DavidDewane />
 			</Sequence>
-			<Sequence from={4100} durationInFrames={1620}>
+			<Sequence from={4100} durationInFrames={1670}>
 				<Scene6Building />
 			</Sequence>
-			<Sequence from={5695} durationInFrames={400}>
+			<Sequence from={5705} durationInFrames={390}>
 				<Scene7OpenOffices />
 			</Sequence>
 			<Sequence from={6095} durationInFrames={380}>

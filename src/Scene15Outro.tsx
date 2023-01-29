@@ -101,7 +101,7 @@ export const Scene15Outro: React.FC = () => {
 
 	const subscribeEffectOpacity = interpolate(
 		frame,
-		[fps * 6.5, fps * 6.9],
+		[fps * 6.5, fps * 6.8],
 		[1, 0],
 		{
 			extrapolateLeft: 'clamp',
@@ -111,7 +111,7 @@ export const Scene15Outro: React.FC = () => {
 
 	const subscribeEffectScale = interpolate(
 		frame,
-		[fps * 6.5, fps * 6.9],
+		[fps * 6.5, fps * 6.8],
 		[0, 2],
 		{
 			extrapolateLeft: 'clamp',
