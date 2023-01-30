@@ -1,4 +1,14 @@
-# Remotion video
+# The Eudaimonia Machine
+
+This is the first in a series of videos on the Eudaimonia Machine. I first read about the Eudaimonia Machine in Cal Newport's "Deep Work," and it's fascinated me ever since.
+
+[View YouTube Playlist](https://www.youtube.com/watch?v=IyRB3SbGnaY&list=PLliaWoyhTnjF6oQFYjviMGY4zAJHZHS2M)
+
+View other videos' repositories:
+
+- [The Leopold](https://github.com/brenjamin/the-leopold-eudaimonia-machine-video)
+
+## This video was made with Remotion
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
