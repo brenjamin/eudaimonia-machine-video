@@ -7,6 +7,7 @@ This is the first in a series of videos on the Eudaimonia Machine. I first read 
 View other videos' repositories:
 
 - [The Leopold](https://github.com/brenjamin/the-leopold-eudaimonia-machine-video)
+- [The Eudaimonia Machine Lives!](https://github.com/brenjamin/eudaimonia-machine-lives)
 
 ## This video was made with Remotion
 
